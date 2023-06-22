@@ -15,24 +15,30 @@ public class Unit : MonoBehaviour
 
     private void Start()
     {
-        CheckInfoText(); // ABSTRACTION
+        AddInfoText(); // ABSTRACTION
     }
 
     // Looks and finds the Info text object
-    private void CheckInfoText()
+    private void AddInfoText()
     {
         if (!infoText)
         {
             infoText = GameObject.Find("InfoText").GetComponent<TMP_Text>();
         }
 
-        infoText.gameObject.SetActive(false);
+        ShowInfoText(false);
+    }
+
+    // Handles the InfoText visibility
+    public void ShowInfoText(bool show)
+    {
+        infoText.gameObject.SetActive(show);
     }
 
     // Shows the Unit info
     public virtual void ShowInfo()
     {
-        infoText.gameObject.SetActive(true);
+        ShowInfoText(true);
         infoText.text = UnitName;
     }
 

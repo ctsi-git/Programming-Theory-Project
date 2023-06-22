@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Camera cam;    
+    private Camera cam;
+    private Unit selectedUnit = null;
+
 
     private void Start()
     {
@@ -18,10 +20,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             HandleSelection(); // ABSTRACTION
-        }             
+        }
 
     }
-   
+
     // Manages the player selection options
     private void HandleSelection()
     {
@@ -31,19 +33,24 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-           
+            if (selectedUnit != null)
+            {
+                selectedUnit.ShowInfoText(false);
+            }
+
             // If the object is a Unit
             if (hit.collider.gameObject.GetComponent<Unit>() != null)
             {
-                Unit unit = hit.collider.gameObject.GetComponent<Unit>();
 
-                unit.ShowInfo();
+                selectedUnit = hit.collider.gameObject.GetComponent<Unit>();
 
-                unit.MoveForward();
+                selectedUnit.ShowInfo();
+
+                selectedUnit.MoveForward();
 
             }
         }
     }
 
-    
+
 }
