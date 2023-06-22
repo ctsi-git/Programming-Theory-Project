@@ -44,7 +44,8 @@ public class PlayerController : MonoBehaviour
 
                 selectedUnit = hit.collider.gameObject.GetComponent<Unit>();
 
-                selectedUnit.ShowInfo();              
+                selectedUnit.ShowInfo();
+                selectedUnit.Greet();
 
             }
         }

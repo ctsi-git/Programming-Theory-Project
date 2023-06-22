@@ -5,16 +5,35 @@ using TMPro;
 using UnityEngine;
 
 
-public class Unit : MonoBehaviour
+public abstract class Unit : MonoBehaviour
 {
+    [SerializeField] protected TMP_Text infoText;
     [SerializeField] private string unitName;
-    [SerializeField] private TMP_Text infoText;
 
-    public string UnitName => unitName;  // ENCAPSULATION   
+    public string UnitName     // ENCAPSULATION
+    {
+        get { return unitName; }
+        set
+        {
+            if (value == "")
+            {
+                Debug.Log("UnitName value cannot be empty");
+            }
+            else
+            {
+                unitName = value;
+            }
+        }
+    }
+
+
+    protected Rigidbody Rb;
 
     private void Start()
     {
         AddInfoText(); // ABSTRACTION
+
+        Rb = GetComponent<Rigidbody>();
     }
 
     // Looks and finds the Info text object
@@ -25,7 +44,7 @@ public class Unit : MonoBehaviour
             infoText = GameObject.Find("InfoText").GetComponent<TMP_Text>();
         }
 
-        ShowInfoText(false);
+        ShowInfoText(false); // ABSTRACTION
     }
 
     // Handles the InfoText visibility
@@ -39,5 +58,8 @@ public class Unit : MonoBehaviour
     {
         ShowInfoText(true);
         infoText.text = UnitName;
-    }    
+    }
+
+    // Handles the custom unit salute
+    public abstract void Greet();
 }
