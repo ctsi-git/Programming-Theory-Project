@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Camera cam;
-    
+    private Camera cam;    
 
     private void Start()
     {
@@ -18,12 +17,10 @@ public class PlayerController : MonoBehaviour
         // Left Mouse Button Click
         if (Input.GetMouseButtonDown(0))
         {
-            HandleSelection(); //Abstraction
+            HandleSelection(); // ABSTRACTION
         }             
 
     }
-
-
    
     // Manages the player selection options
     private void HandleSelection()
@@ -38,7 +35,11 @@ public class PlayerController : MonoBehaviour
             // If the object is a Unit
             if (hit.collider.gameObject.GetComponent<Unit>() != null)
             {
-                
+                Unit unit = hit.collider.gameObject.GetComponent<Unit>();
+
+                unit.ShowInfo();
+
+                unit.MoveForward();
 
             }
         }
