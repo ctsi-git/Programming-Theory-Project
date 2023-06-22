@@ -44,9 +44,7 @@ public class PlayerController : MonoBehaviour
 
                 selectedUnit = hit.collider.gameObject.GetComponent<Unit>();
 
-                selectedUnit.ShowInfo();
-
-                selectedUnit.MoveForward();
+                selectedUnit.ShowInfo();              
 
             }
         }

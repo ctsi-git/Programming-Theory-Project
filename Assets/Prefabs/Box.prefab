@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7822208896942970239}
   - component: {fileID: 7313707203328103670}
   - component: {fileID: 6409863161121284196}
-  - component: {fileID: 4339751716329892136}
+  - component: {fileID: 7125878762005095625}
   m_Layer: 0
-  m_Name: Unit
+  m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 4165692475102508291}
   - {fileID: 5843143057368954628}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7313707203328103670
 BoxCollider:
@@ -84,7 +84,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4339751716329892136
+--- !u!114 &7125878762005095625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,10 +93,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 392386480433432632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4773a3088d7a39344b714e68170004ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 65a3f7748df622c4e9838218ef659c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Basic Unit
+  unitName: Box Unit
+  infoText: {fileID: 937434179927416538}
 --- !u!1 &1282183728448762344
 GameObject:
   m_ObjectHideFlags: 0

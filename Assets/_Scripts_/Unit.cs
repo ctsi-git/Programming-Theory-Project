@@ -8,10 +8,9 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     [SerializeField] private string unitName;
-   
-    public string UnitName => unitName;  // ENCAPSULATION
+    [SerializeField] private TMP_Text infoText;
 
-    private TMP_Text infoText;
+    public string UnitName => unitName;  // ENCAPSULATION   
 
     private void Start()
     {
@@ -40,10 +39,5 @@ public class Unit : MonoBehaviour
     {
         ShowInfoText(true);
         infoText.text = UnitName;
-    }
-
-    public virtual void MoveForward()
-    {
-
-    }
+    }    
 }
