@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CylinderUnit : Unit
+public class CylinderUnit : Unit // INHERITANCE
 {
     [SerializeField] private string greet = "Hello, I'm a Cylinder, the only carrier you will need";
 

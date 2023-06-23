@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxUnit : Unit
+public class BoxUnit : Unit // INHERITANCE
 {
     [SerializeField] private string greet = "Hello, I'm a box, also a very good fighter";
 

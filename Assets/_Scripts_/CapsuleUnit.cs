@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CapsuleUnit : Unit
+public class CapsuleUnit : Unit // INHERITANCE
 {
     [SerializeField] private string greet = "Hello, I'm a Capsule, the most powerful mage around...";
 
